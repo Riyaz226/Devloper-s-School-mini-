@@ -1,0 +1,450 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins',sans-serif;
+}
+
+*::selection{
+    color: white;
+}
+
+:root{
+    --primary-color:#1f242d;
+    --second-bg-color:#323946;
+    --text-color:#fff;
+}
+.dark-mode{
+    --primary-color:#212121;
+    --secondary-color:#f9f9f9;
+}
+
+
+body{
+ color: black;
+ transition: 1s;
+ overflow-x: hidden;
+} 
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 10%;
+    display: flex;
+    background: white;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 0 20px whitesmoke;
+}
+
+.garuda-logo{
+position: relative;
+width: 3.8rem;    
+animation: slideRight 1s ease forwards;
+}
+
+header .navbar .a{
+display: inline-block;    
+font-size: 16.5px;
+color:black;
+text-decoration: none;
+font-weight: 500;
+margin-left: 35px;
+transition: .3s;
+animation: slideTop .5s ease forwards;
+animation-delay: calc(.2s * var(--i));
+}
+
+.navbar .a:hover,
+.navbar .a.active{
+    color: var(--primary-color);
+}
+
+header .mode{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    background: linear-gradient(#f00,#000);
+    border-radius: 50%;
+    cursor: pointer;
+  font-size: 1.2em;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+  }
+.home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 97px 10% 0;
+}
+
+.home-content{
+ max-width: 800px;
+}
+
+.home-content h1{
+    font-size: 39.5px;
+    font-weight: 800;
+    margin: 4 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: .1s;
+    opacity: 0;
+    margin-top:5px;
+    letter-spacing: 1px;
+    color:#25265e;
+}
+
+.home-content p{
+    font-size: 20.5px;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: .1s;
+opacity: 0;
+margin-top:15px;
+line-height:29.5px;
+}
+
+.home-content p>span{
+    color: blue;
+}
+.home-img img{
+max-width: 38vw;
+margin-right: -15px;
+animation: zoomIn 1s ease forwards,floatImage 3s ease-in-out infinite;
+animation-delay: 2s,3s;
+opacity: 0;
+border-radius: 23%;
+}
+
+.social-media .a{
+    display: inline-flex;
+   justify-content: center;
+   align-items: center; 
+   width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    margin: 30px 15px 30px 0;
+ transition: .5s ease;
+ animation: slideLeft 1s ease forwards;
+ animation-delay: calc(.2s * var(--i));
+opacity: 0;
+}
+
+.social-media .a:hover{
+    background: #0ef;
+    color: #1f242d;
+}
+
+.social-media .a:hover{
+    background: #0ef;
+    color: #1f242d;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    box-shadow: 0 0 10px #0ef;
+    font-size: 16px;
+    color: #1f242d;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .2s;
+}
+
+@keyframes slideRight {
+    0%{
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+@keyframes slideLeft {
+    0%{
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0%{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0%{
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform:scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes floatImage {
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-24px);
+    }
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+#toggle-btn{
+    position: relative;
+    font-size: 3rem;
+    cursor: pointer;
+ display: none;
+}
+@media(max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media(max-width:991px){
+    .header{
+        padding: 2rem 3%;
+    }
+    
+    
+}
+
+@media(max-width:768px){
+.home{
+    flex-direction: column;
+    padding:119.5px 10% ;
+}
+.home-content h3{
+    font-size: 2.5rem;
+}
+.home-content h1{
+    text-align: center;
+    font-size: 4rem;
+}
+.home-img img{
+max-width: 69.5vw;
+margin-top: 41.5px;
+}
+#toggle-btn{
+ display: block;   
+}
+header .navbar{
+    position: absolute;
+    top: -300px;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    box-shadow: 0 .5rem  1rem rgba(0, 0, 0,.1);
+border-top:.1rem solid rgba(0, 0, 0,.2) ;
+overflow: hidden;
+}
+header .navbar.slide{
+    top:100%;
+}
+header .navbar .a{
+display: block;
+margin: 2rem 0;
+font-size: 1.8rem;
+}
+header .mode{
+    position: absolute;
+    right: 21.8%;
+    width: 3.4rem;
+    height: 3.4rem;
+    cursor: pointer;
+  font-size: 2.2em;
+}
+.garuda-logo{
+    width: 7rem;
+}
+}
+
+/*Course*/
+.course{
+    position: relative;
+width: 100%;
+height: 100vh;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1px 10% 0;
+margin-top:-65px;
+}
+
+.course-container{
+    max-width: 800px;
+}
+
+.course-content h3{
+    font-size: 25px;
+    font-weight: 800;
+    margin: 4 0;
+}
+
+.course-content p{
+    color:#25265e;
+    margin: 7 0;
+    word-spacing: 4px;
+    margin-top: 6px;
+    font-size: 19.5px;
+}
+
+.course-box{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 52px;
+cursor: pointer;  
+}
+
+
+.course-box img{
+    width: 10vw;
+    animation: zoomIn 1s ease forwards,floatImage 4s ease-in-out infinite;
+    animation-delay: .4s;
+    opacity: 0;
+   box-shadow: 0 2px 0 red;   
+}
+
+.thr{
+    height: 113px;
+}
+.six{
+    height: 85px;
+}
+
+.sev{
+   height: 126px;
+}
+
+@media(max-width:1036px){
+    .course{
+        padding: 600px 10%;
+    }
+}
+@media(max-width:768px){
+    .course{
+        flex-direction: column;
+    }
+    .course-content h3,p{
+        text-align: center;
+    }
+
+    .course-box {
+      margin-top:73px ;
+    }
+ .course-box img{
+    width: 73vw;
+ }   
+ 
+.thr{
+    height: 63px;
+}
+.fou{
+    height: 40px;
+}
+.six{
+    height: 67px;
+}
+
+.sev{
+ height: 60px;
+}
+}
+/*why*/
+.services{
+    padding-top: 78px;
+    display: grid;
+    gap: 52px;
+ 
+}
+.heading{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 800;
+  color: #25265e;
+}
+.services h2{
+    margin-bottom: 4.75rem;
+}
+
+.service-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: wrap;
+    gap: 2rem;
+    padding: 0px 10%;
+}
+
+.service-container .services-box{
+    flex: 1 1 30rem;
+    background: rosybrown;
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--primary-color);
+}
+
+.services-box i{
+    font-size: 7rem;
+    color: burlywood;
+}
+
+.service-container .services-box >h3{
+    color: brown;
+    font-size: 20px;
+}
+.service-container .services-box >p{
+    color: white;
+    font-size: 18px;
+}
